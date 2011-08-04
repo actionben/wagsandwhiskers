@@ -3,13 +3,13 @@ require 'sinatra'
 require 'haml'
 require 'maruku'
 
-configure :production do
-  before do
-    if request.host != 'www.wagsandwhiskers.co.uk'
-      redirect "http://www.wagsandwhiskers.co.uk"+request.fullpath, 301
-    end
-  end
-end
+# configure :production do
+#   before do
+#     if request.host != 'www.wagsandwhiskers.co.uk'
+#       redirect "http://www.wagsandwhiskers.co.uk"+request.fullpath, 301
+#     end
+#   end
+# end
 
 get '/' do
   haml :index

@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require 'maruku'
+require 'kramdown'
 
 # configure :production do
 #   before do

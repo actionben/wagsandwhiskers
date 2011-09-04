@@ -15,6 +15,10 @@ get '/' do
   haml :index
 end
 
+get '/qr' do
+  haml :index
+end
+
 get '/stylesheets/front.css' do
   content_type 'text/css', :charset => 'utf-8'
   sass :'stylesheets/front'

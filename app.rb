@@ -11,6 +11,14 @@ require 'kramdown'
 #   end
 # end
 
+module Kramdown
+ include Haml::Filters::Base
+
+ def render(text)
+   ::Kramdown::Document.new(text).to_html
+ end
+end
+
 get '/' do
   haml :index
 end

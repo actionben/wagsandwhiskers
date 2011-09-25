@@ -3,13 +3,13 @@ require 'sinatra'
 require 'haml'
 require 'kramdown'
 
-# configure :production do
-#   before do
-#     if request.host != 'www.wagsandwhiskers.co.uk'
-#       redirect "http://www.wagsandwhiskers.co.uk"+request.fullpath, 301
-#     end
-#   end
-# end
+configure :production do
+  before do
+    if request.host != 'www.wagsandwhiskerspetcare.co.uk'
+      redirect "http://www.wagsandwhiskerspetcare.co.uk"+request.fullpath, 301
+    end
+  end
+end
 
 module Kramdown
  include Haml::Filters::Base

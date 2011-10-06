@@ -19,6 +19,42 @@ module Kramdown
  end
 end
 
+helpers do
+  def menu_items
+    [{:text => "Home",
+      :href => "/"},
+     {:text => "Dogs",
+      :href => "/dogs"},
+     {:text => "Cats",
+      :href => "/cats"},
+     {:text => "Small animals",
+      :href => "/small-animals"},
+     {:text => "Pricing",
+      :href => "/pricing"}
+    ]
+  end
+
+  def menu_item(text, href)
+    if request.path_info == href
+      capture_haml do
+        haml_tag 'li.current' do
+          haml_tag 'span.text' do
+            haml_concat text
+          end
+        end
+      end
+    else
+      capture_haml do
+        haml_tag 'li.current' do
+          haml_tag :a, :href => href do
+            haml_concat text
+          end
+        end
+      end
+    end
+  end
+end
+
 get '/' do
   haml :index
 end

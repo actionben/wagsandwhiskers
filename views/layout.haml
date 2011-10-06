@@ -1,0 +1,35 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "UTF-8"}
+      %title Wags And Whiskers Petcare
+      %link{:href => "/stylesheets/front.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}
+  %body
+    .outer_wrapper
+      .wrapper
+        .persistent
+          .site_title
+            %h1 Wags & Whiskers
+            %p Welcome To The Best Pet Care In Central Bedfordshire
+          .contact_us
+            .content
+              %h2 Contact us
+              .phone
+                %ul
+                  %li
+                    %a{:href => "tel:+447808 646 088"}
+                      07808 646 088
+                  %li
+                    %a{:href => "tel:+447808 646 089"}
+                      07808 646 089
+              %h3 Email
+              %p.email
+                %a{:href => "mailto:info@wagsandwhiskerspetcare.co.uk"}
+                  info@wagsandwhiskerspetcare.co.uk
+        .main
+          .menu
+            %ul
+              - menu_items.each do |item|
+                = menu_item(item[:text], item[:href])
+          .content
+            = yield

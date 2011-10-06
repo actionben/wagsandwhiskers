@@ -53,10 +53,35 @@ helpers do
       end
     end
   end
+  
+  def footer
+    "Wags and Whiskers will bring in newspapers, open and close curtains, water indoor plants, put out bins and turn lights on and off, to provide added security while you’re away. Just ask if required."
+  end
 end
 
 get '/' do
+  @body_class = "index"
   haml :index
+end
+
+get '/dogs' do
+  @body_class = "dogs"
+  haml :dogs
+end
+
+get '/cats' do
+  @body_class = "cats"
+  haml :cats
+end
+
+get '/small-animals' do
+  @body_class = "small_animals"
+  haml :small_animals
+end
+
+get '/pricing' do
+  @body_class = "pricing"
+  haml :pricing
 end
 
 get '/qr' do

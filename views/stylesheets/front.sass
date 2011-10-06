@@ -1,7 +1,17 @@
 $pink: #E72A7F
+
 @mixin offscreen
   position: absolute
   right: 999999px
+
+@mixin content_box
+  width: 285px
+@mixin first
+  @include content_box
+@mixin second
+  @include content_box
+  float: right
+  margin-top: 260px
 
 body
   background: url("/images/site_bg.png") no-repeat scroll center -130px $pink
@@ -56,7 +66,13 @@ body
   width: 653px
   height: 735px
   margin-top: 20px
+  margin-bottom: 40px
   background: url("/images/main_bg.png") no-repeat scroll left top
+  body.pricing &
+    background: white none
+    border: $pink solid 6px
+    width: 630px
+    height: auto
   p
     padding: 0 2em 1em
   .menu
@@ -79,15 +95,15 @@ body
     margin: 80px 40px
     color: $pink
   .services,
-  .selling_points
-    width: 285px
-  .services
+  .first
+    @include first
     float: left
+  .services
     h2
       height: 105px
       background: url("/images/services_heading.png") no-repeat scroll center top
       *
         @include offscreen
-  .selling_points
-    float: right
-    margin-top: 260px
+  .selling_points,
+  .second
+    @include second

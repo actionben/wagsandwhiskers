@@ -55,7 +55,7 @@ helpers do
   end
   
   def footer
-    "Wags and Whiskers will bring in newspapers, open and close curtains, water indoor plants, put out bins and turn lights on and off, to provide added security while you’re away. Just ask if required."
+    "Wags and Whiskers will bring in newspapers, open and close curtains, water indoor plants, put out bins and turn lights on and off, to provide added security while you're away. Just ask if required."
   end
 end
 

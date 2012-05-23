@@ -28,9 +28,7 @@ helpers do
      {:text => "Cats",
       :href => "/cats"},
      {:text => "Small animals",
-      :href => "/small-animals"},
-     {:text => "Pricing",
-      :href => "/pricing"}
+      :href => "/small-animals"}
     ]
   end
 
